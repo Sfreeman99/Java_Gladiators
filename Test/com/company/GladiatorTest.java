@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class GladiatorTest {
     @Test
     void makeAGladiator() {
-        Gladiator playeOne = new Gladiator("Shedlia Freeman");
-        assertEquals("Shedlia Freeman", playeOne.name);
+        Gladiator playerOne = new Gladiator("Shedlia Freeman");
+        assertEquals("Shedlia Freeman", playerOne.name);
     }
 
 }
