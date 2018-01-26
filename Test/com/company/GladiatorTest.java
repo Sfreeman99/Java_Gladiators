@@ -39,6 +39,17 @@ class GladiatorTest {
         assert playerOne.health < 100 ;
     }
     @Test
+    void TestGladiatorCanCriticallyHit() {
+        // Bill and Jake got to fighting
+        Gladiator Bill = new Gladiator("Bill");
+        Gladiator Jake = new Gladiator("Jake");
+        // Bill hit Jake harder than usually which knocked him off his feet
+        Bill.rage = 100;
+        Bill.attack(Jake);
+        assertEquals(0, Bill.rage);
+        assert 50 < Jake.health || Jake.health >=80;
+    }
+    @Test
     void TestGladiatorCanHeal() {
         //Bill got to fighting with Jo
         Gladiator Bill = new Gladiator("Bill");
