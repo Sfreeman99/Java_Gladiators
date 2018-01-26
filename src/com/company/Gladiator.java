@@ -29,8 +29,13 @@ public class Gladiator {
     public double heal() {
         this.health += 15;
         if (this.health > 100)
-            return health = 100;
+            health = 100;
+        return health;
+    }
+    public boolean isDead() {
+        if (health <= 0)
+            return true;
         else
-            return health;
+            return false;
     }
 }
