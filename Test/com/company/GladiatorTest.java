@@ -51,5 +51,16 @@ class GladiatorTest {
         assert Jo.health > JoOriginalHealth;
 
     }
+    @Test
+    void TestGladiatorIsDead() {
+        // Bill got extremely mad at Paul
+        Gladiator Bill = new Gladiator("Bill");
+        Gladiator Paul = new Gladiator("Paul");
+        // Instead of fighting fair he hit Paul with a bat
+        Bill.attack(Paul);
+        // He accidentally killed Paul
+        Paul.health = 0;
+        assertTrue(Paul.isDead());
+    }
 
 }
