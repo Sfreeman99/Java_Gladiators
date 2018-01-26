@@ -28,5 +28,28 @@ class GladiatorTest {
         playerOne.attack(playerTwo);
         assertTrue(playerTwo.health < 100);
     }
+    @Test
+    void TestGladiatorCanAttackAfterBeingAttacked() {
+        Gladiator playerOne = new Gladiator("Bill");
+        Gladiator playerTwo = new Gladiator("Bob");
+        playerOne.attack(playerTwo);
+        assertTrue(playerTwo.health < 100);
+        assertEquals(100, playerOne.health);
+        playerTwo.attack(playerOne);
+        assert playerOne.health < 100 ;
+    }
+    @Test
+    void TestGladiatorCanHeal() {
+        //Bill got to fighting with Jo
+        Gladiator Bill = new Gladiator("Bill");
+        Gladiator Jo = new Gladiator("Jo");
+        // Bill hit Jo in the mouth
+        Bill.attack(Jo);
+        double JoOriginalHealth = Jo.health;
+        //Jo stood back and put a bandage on the wound he got
+        Jo.heal();
+        assert Jo.health > JoOriginalHealth;
+
+    }
 
 }
