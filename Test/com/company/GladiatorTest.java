@@ -60,7 +60,15 @@ class GladiatorTest {
         Bill.attack(Paul);
         // He accidentally killed Paul
         Paul.health = 0;
+        assertFalse(Bill.isDead());
         assertTrue(Paul.isDead());
+    }
+    @Test
+    void TestGladiatorAlreadyHas100() {
+        Gladiator Bill = new Gladiator("Bill");
+        Gladiator Paul = new Gladiator("Paul");
+        Bill.heal();
+        assertEquals(100, Bill.health);
     }
 
 }
