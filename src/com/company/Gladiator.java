@@ -22,8 +22,16 @@ public class Gladiator {
         rage = 0;
     }
     public int attack(Gladiator defender){
+        double chance = Math.random() * 100;
         double attack = Math.random() * attackHigh + attackLow;
-        defender.health -= attack;
+        if (rage > chance){
+            defender.health -= (attack * 2);
+            rage = 0;
+        }
+        else {
+            defender.health -= attack;
+            rage += 15;
+        }
         return defender.health;
     }
     public double heal() {
