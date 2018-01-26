@@ -50,6 +50,14 @@ class GladiatorTest {
         assert 50 < Jake.health || Jake.health >=80;
     }
     @Test
+    void TestGladiatorCanHitAndCollectRage(){
+        Gladiator Joe = new Gladiator("Joe");
+        Gladiator Dil = new Gladiator("Dil");
+        Joe.attack(Dil);
+        assert Joe.rage == 15 || Joe.rage == 0;
+        assert Dil.health < 90 || Dil.health > 50;
+    }
+    @Test
     void TestGladiatorCanHeal() {
         //Bill got to fighting with Jo
         Gladiator Bill = new Gladiator("Bill");
